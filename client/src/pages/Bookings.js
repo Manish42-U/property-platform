@@ -1364,8 +1364,8 @@ function Bookings() {
     if (window.confirm(`Are you sure you want to ${status} this booking?`)) {
       try {
         const token = localStorage.getItem('token')
-        await axios.put(
-          `http://localhost:3000/api/bookings/${bookingId}/status`,
+        await api.put(
+          `/api/bookings/${bookingId}/status`,
           { status },
           { headers: { 'x-auth-token': token } },
         )
@@ -1382,8 +1382,8 @@ function Bookings() {
     if (window.confirm('Are you sure you want to cancel this booking?')) {
       try {
         const token = localStorage.getItem('token')
-        await axios.put(
-          `http://localhost:3000/api/bookings/${bookingId}/cancel`,
+        await api.put(
+          `/api/bookings/${bookingId}/cancel`,
           {},
           {
             headers: { 'x-auth-token': token },

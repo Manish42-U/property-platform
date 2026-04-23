@@ -29,7 +29,6 @@ import {
   FaBuilding,
 } from 'react-icons/fa'
 import { MdLocationOn, MdDateRange, MdVerified } from 'react-icons/md'
-import api from '../services/api'
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(20px); }

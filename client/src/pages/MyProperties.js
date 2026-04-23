@@ -14,7 +14,7 @@
 
 //   const fetchMyProperties = async () => {
 //     try {
-//       const res = await api.get('/properties');
+//       const res = await axios.get('http://localhost:3000/api/properties');
 //       const myProperties = res.data.filter(p => p.owner._id === user?.id);
 //       setProperties(myProperties);
 //     } catch (error) {
@@ -27,7 +27,7 @@
 //   const deleteProperty = async (id) => {
 //     if (window.confirm('Are you sure you want to delete this property?')) {
 //       try {
-//         await api.delete(`/properties/${id}`);
+//         await axios.delete(`http://localhost:3000/api/properties/${id}`);
 //         setProperties(properties.filter(p => p._id !== id));
 //         alert('Property deleted successfully');
 //       } catch (error) {
