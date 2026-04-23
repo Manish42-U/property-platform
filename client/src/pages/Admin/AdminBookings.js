@@ -182,8 +182,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import api from '../services/api'
-
+import api from '../../services/api'
 
 const Container = styled.div`
   max-width: 1400px;

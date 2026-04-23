@@ -201,8 +201,7 @@ import axios from 'axios';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import api from '../services/api'
-
+import api from '../../services/api'
 
 const Container = styled.div`
   max-width: 1400px;
