@@ -44,23 +44,19 @@ const allowedOrigins = [
   'http://localhost:3001'                    
 ];
 
+a// ... आपका अन्य कोड ...
+
+// ✅ अस्थायी रूप से CORS को सभी के लिए खोलें (सिर्फ टेस्टिंग के लिए)
 app.use(cors({
-  origin: function (origin, callback) {
-    // अनुरोध (Request) को तब अनुमति दें जब origin 'allowedOrigins' लिस्ट में हो या वह undefined हो
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      console.log('Blocked by CORS:', origin); // लॉग में देखें कि किस origin को ब्लॉक किया
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: '*', // सभी origins को अनुमति देता है
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'x-auth-token']
 }));
+
+
 app.use(express.json());
 
-// MongoDB Connection - Remove deprecated options
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/property-platform')
   .then(() => console.log('MongoDB connected successfully'))
   .catch(err => console.log('MongoDB connection error:', err));
