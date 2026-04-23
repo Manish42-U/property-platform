@@ -36,35 +36,57 @@ dotenv.config();
 
 const app = express();
 
-// Middleware
+// ─────────────────────────────────────────────────────────────────
+//  CORS Configuration – allow only your Vercel frontend + localhost
+// ─────────────────────────────────────────────────────────────────
 const allowedOrigins = [
-  'https://property-platform-3kar.vercel.app', 
-  'https://property-platform.vercel.app',     
-  'http://localhost:3000',                    
-  'http://localhost:3001'                    
+  'https://property-platform-3kar.vercel.app',  // your active Vercel app
+  'https://property-platform.vercel.app',      // alternative domain
+  'http://localhost:3000',                     // local React dev server
+  'http://localhost:3001'                      // alternative local port
 ];
 
-
-// ✅ अस्थायी रूप से CORS को सभी के लिए खोलें (सिर्फ टेस्टिंग के लिए)
 app.use(cors({
-  origin: '*', // सभी origins को अनुमति देता है
-  credentials: true,
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      console.log('❌ Blocked by CORS:', origin);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,          // allow cookies / auth headers
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'x-auth-token']
 }));
 
+// Handle preflight requests explicitly (optional but safe)
+app.options('*', cors());
 
+// ─────────────────────────────────────────────────────────────────
+//  Middleware
+// ─────────────────────────────────────────────────────────────────
 app.use(express.json());
 
+// ─────────────────────────────────────────────────────────────────
+//  Database connection
+// ─────────────────────────────────────────────────────────────────
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/property-platform')
-  .then(() => console.log('MongoDB connected successfully'))
-  .catch(err => console.log('MongoDB connection error:', err));
+  .then(() => console.log('✅ MongoDB connected successfully'))
+  .catch(err => console.log('❌ MongoDB connection error:', err));
 
-// Routes
+// ─────────────────────────────────────────────────────────────────
+//  Routes
+// ─────────────────────────────────────────────────────────────────
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/properties', require('./routes/properties'));
 app.use('/api/bookings', require('./routes/bookings'));
 app.use('/api/admin', require('./routes/admin'));
 
+// ─────────────────────────────────────────────────────────────────
+//  Start server
+// ─────────────────────────────────────────────────────────────────
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

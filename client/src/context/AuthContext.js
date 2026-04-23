@@ -293,11 +293,8 @@
 import React, { createContext, useState, useContext, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
-// ✅ Production URL - Directly set
-const API_URL = 'https://property-platform-4xcj.onrender.com/api';
-
-// For local development, uncomment below:
-// const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000/api';
+// ✅ Use production URL on Vercel, fallback to localhost for development
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000/api';
 
 const AuthContext = createContext();
 
@@ -308,28 +305,24 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [token, setToken] = useState(localStorage.getItem('token'));
 
+  // Fetch current user with stored token
   const fetchUser = useCallback(async () => {
+    const storedToken = localStorage.getItem('token');
+    if (!storedToken) {
+      setLoading(false);
+      return;
+    }
+
     try {
-      const storedToken = localStorage.getItem('token');
-      if (!storedToken) {
-        setLoading(false);
-        return;
-      }
-      
-      console.log('Fetching user from:', `${API_URL}/auth/me`);
-      
       const res = await axios.get(`${API_URL}/auth/me`, {
-        headers: { 'x-auth-token': storedToken }
+        headers: { 'x-auth-token': storedToken },
+        withCredentials: true
       });
-      
-      console.log('Fetched user from backend:', res.data);
-      
       const userData = res.data.user || res.data;
       setUser(userData);
       localStorage.setItem('user', JSON.stringify(userData));
-      
     } catch (error) {
-      console.error('Error fetching user:', error);
+      console.error('Fetch user error:', error);
       localStorage.removeItem('token');
       localStorage.removeItem('user');
       setUser(null);
@@ -348,21 +341,19 @@ export const AuthProvider = ({ children }) => {
     }
   }, [token, fetchUser]);
 
+  // Login function
   const login = async (email, password) => {
     try {
-      console.log('Login request to:', `${API_URL}/auth/login`);
-      
-      const res = await axios.post(`${API_URL}/auth/login`, { email, password });
+      const res = await axios.post(`${API_URL}/auth/login`, { email, password }, {
+        withCredentials: true,
+        headers: { 'Content-Type': 'application/json' }
+      });
       const { token, user } = res.data;
-      
-      console.log('Login successful:', { user });
-      
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
       axios.defaults.headers.common['x-auth-token'] = token;
       setToken(token);
       setUser(user);
-      
       return { success: true, user };
     } catch (error) {
       console.error('Login error:', error);
@@ -370,19 +361,19 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  // Register function
   const register = async (userData) => {
     try {
-      console.log('Register request to:', `${API_URL}/auth/register`);
-      
-      const res = await axios.post(`${API_URL}/auth/register`, userData);
+      const res = await axios.post(`${API_URL}/auth/register`, userData, {
+        withCredentials: true,
+        headers: { 'Content-Type': 'application/json' }
+      });
       const { token, user } = res.data;
-      
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
       axios.defaults.headers.common['x-auth-token'] = token;
       setToken(token);
       setUser(user);
-      
       return { success: true };
     } catch (error) {
       console.error('Registration error:', error);
@@ -390,6 +381,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  // Logout
   const logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
