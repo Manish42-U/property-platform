@@ -358,11 +358,10 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
-    setLoading(true);
-
-    const result = await login(formData.email, formData.password);
-    
+  console.log('Form submitted with email:', formData.email);
+  setError('');
+  setLoading(true);
+  const result = await login(formData.email, formData.password);
     if (result.success) {
       const userData = JSON.parse(localStorage.getItem('user'));
       if (userData?.role === 'admin') {
