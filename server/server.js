@@ -26,7 +26,6 @@
 // const PORT = process.env.PORT || 5000;
 // app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -35,7 +34,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const app = express();
 
-// ✅ Add all your Vercel domains here
+// CORS configuration
 const allowedOrigins = [
   'https://property-platform-3kar.vercel.app',
   'https://property-platform.vercel.app',
@@ -46,9 +45,11 @@ const allowedOrigins = [
 ];
 
 app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+    if (origin.endsWith('.vercel.app') || allowedOrigins.includes(origin)) {
+      // ✅ Return the exact origin (not '*')
+      callback(null, origin);
     } else {
       console.log('❌ Blocked by CORS:', origin);
       callback(new Error('CORS not allowed'));
@@ -59,7 +60,9 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'x-auth-token']
 }));
 
-app.options('*', cors());
+// ✅ The cors middleware above handles OPTIONS preflight requests automatically
+// No need for app.options('*', cors())
+
 app.use(express.json());
 
 mongoose.connect(process.env.MONGODB_URI)
