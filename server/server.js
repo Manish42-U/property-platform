@@ -44,7 +44,6 @@ const allowedOrigins = [
   'http://localhost:3001'                    
 ];
 
-a// ... आपका अन्य कोड ...
 
 // ✅ अस्थायी रूप से CORS को सभी के लिए खोलें (सिर्फ टेस्टिंग के लिए)
 app.use(cors({
