@@ -547,7 +547,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../services/api';
+
 
 function PropertyList() {
   const [properties, setProperties] = useState([]);
@@ -568,7 +569,7 @@ function PropertyList() {
       
       console.log('Fetching properties...');
       
-      const response = await axios.get(`http://localhost:3000/api/properties${location.search}`, {
+      const response = await api.get(`/properties${location.search}`, {
         headers: {
           'Content-Type': 'application/json',
         },
