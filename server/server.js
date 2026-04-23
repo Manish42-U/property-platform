@@ -37,13 +37,23 @@ dotenv.config();
 const app = express();
 
 // Middleware
+const allowedOrigins = [
+  'https://property-platform-3kar.vercel.app', 
+  'https://property-platform.vercel.app',     
+  'http://localhost:3000',                    
+  'http://localhost:3001'                    
+];
+
 app.use(cors({
-  origin: [
-    'https://property-platform-3kar.vercel.app',
-    'https://property-platform.vercel.app',
-    'http://localhost:3000',
-    'http://localhost:3001'
-  ],
+  origin: function (origin, callback) {
+    // अनुरोध (Request) को तब अनुमति दें जब origin 'allowedOrigins' लिस्ट में हो या वह undefined हो
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      console.log('Blocked by CORS:', origin); // लॉग में देखें कि किस origin को ब्लॉक किया
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'x-auth-token']
