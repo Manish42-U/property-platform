@@ -293,8 +293,11 @@
 import React, { createContext, useState, useContext, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
-// ✅ Add this - Production API URL
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000/api';
+// ✅ Production URL - Directly set
+const API_URL = 'https://property-platform-4xcj.onrender.com/api';
+
+// For local development, uncomment below:
+// const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000/api';
 
 const AuthContext = createContext();
 
@@ -313,7 +316,8 @@ export const AuthProvider = ({ children }) => {
         return;
       }
       
-      // ✅ Updated: Use API_URL
+      console.log('Fetching user from:', `${API_URL}/auth/me`);
+      
       const res = await axios.get(`${API_URL}/auth/me`, {
         headers: { 'x-auth-token': storedToken }
       });
@@ -323,9 +327,6 @@ export const AuthProvider = ({ children }) => {
       const userData = res.data.user || res.data;
       setUser(userData);
       localStorage.setItem('user', JSON.stringify(userData));
-      
-      console.log('User set in context:', userData);
-      console.log('User role:', userData.role);
       
     } catch (error) {
       console.error('Error fetching user:', error);
@@ -349,12 +350,12 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      // ✅ Updated: Use API_URL
+      console.log('Login request to:', `${API_URL}/auth/login`);
+      
       const res = await axios.post(`${API_URL}/auth/login`, { email, password });
       const { token, user } = res.data;
       
-      console.log('Login API response:', { token, user });
-      console.log('User role from API:', user.role);
+      console.log('Login successful:', { user });
       
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
@@ -371,11 +372,10 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (userData) => {
     try {
-      // ✅ Updated: Use API_URL
+      console.log('Register request to:', `${API_URL}/auth/register`);
+      
       const res = await axios.post(`${API_URL}/auth/register`, userData);
       const { token, user } = res.data;
-      
-      console.log('Register API response:', { token, user });
       
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
