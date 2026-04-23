@@ -684,6 +684,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import api from '../services/api'
+
 
 const Container = styled.div`
   max-width: 1400px;
@@ -1065,7 +1067,7 @@ function AdminUsers() {
         return;
       }
       
-      const response = await axios.get('http://localhost:3000/api/admin/users', {
+      const response = await api.get('/admin/users', {
         headers: { 
           'x-auth-token': token,
           'Content-Type': 'application/json'
@@ -1105,7 +1107,7 @@ function AdminUsers() {
     try {
       const token = localStorage.getItem('token');
       
-      await axios.put(`http://localhost:3000/api/admin/users/${userId}/role`, 
+      await api.put(`/admin/users/${userId}/role`, 
         { role: newRole },
         { 
           headers: { 
@@ -1138,7 +1140,7 @@ function AdminUsers() {
     try {
       const token = localStorage.getItem('token');
       
-      await axios.delete(`http://localhost:3000/api/admin/users/${userId}`, {
+      await api.delete(`/admin/users/${userId}`, {
         headers: { 'x-auth-token': token }
       });
       
@@ -1174,8 +1176,8 @@ function AdminUsers() {
     setResetError('');
     try {
       const token = localStorage.getItem('token');
-      await axios.put(
-        `http://localhost:3000/api/admin/users/${selectedUserId}/password`,
+      await api.put(
+        `/admin/users/${selectedUserId}/password`,
         { newPassword },
         { headers: { 'x-auth-token': token, 'Content-Type': 'application/json' } }
       );

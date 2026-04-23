@@ -1031,6 +1031,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import styled, { keyframes } from 'styled-components';
+import { applyTimestamps } from '../../../server/models/User';
+import api from '../services/api'
 
 // Animations
 const fadeIn = keyframes`
@@ -1648,7 +1650,7 @@ function UserProfile() {
         return;
       }
       
-      const response = await axios.get('http://localhost:3000/api/auth/me', {
+      const response = await api.get('/auth/me', {
         headers: { 'x-auth-token': token }
       });
       
@@ -1674,7 +1676,7 @@ function UserProfile() {
     setLoadingBookings(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:3000/api/bookings/my-bookings', {
+      const response = await api.get('/bookings/my-bookings', {
         headers: { 'x-auth-token': token }
       });
       setBookings(response.data.bookings || response.data || []);
@@ -1695,8 +1697,8 @@ function UserProfile() {
       const token = localStorage.getItem('token');
       
       // ✅ Use correct URL: /api/auth/profile (not /api/users/profile)
-      const response = await axios.put(
-        'http://localhost:3000/api/auth/profile',
+      const response = await api.put(
+        '/auth/profile',
         {
           name: profileForm.name,
           phone: profileForm.phone
@@ -1746,8 +1748,8 @@ function UserProfile() {
     
     try {
       const token = localStorage.getItem('token');
-      await axios.put(
-        'http://localhost:3000/api/auth/password',
+      await applyTimestamps.put(
+        '/api/auth/password',
         {
           currentPassword: passwordForm.currentPassword,
           newPassword: passwordForm.newPassword

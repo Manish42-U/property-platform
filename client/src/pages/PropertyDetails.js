@@ -1,10 +1,10 @@
 // ;
 
-
 // import React, { useState, useEffect } from 'react';
 // import { useParams, useNavigate } from 'react-router-dom';
 // import axios from 'axios';
 // import { useAuth } from '../context/AuthContext';
+// import api from '../services/api';
 
 // function PropertyDetails() {
 //   const [property, setProperty] = useState(null);
@@ -28,7 +28,7 @@
 
 //   const fetchProperty = async () => {
 //     try {
-//       const res = await axios.get(`http://localhost:3000/api/properties/${id}`);
+//       const res = await api.get(`/properties/${id}`);
 //       setProperty(res.data);
 //     } catch (error) {
 //       console.error('Error fetching property:', error);
@@ -45,14 +45,14 @@
 //     }
 
 //     try {
-//       await axios.post('http://localhost:3000/api/bookings', {
+//       await api.post('/bookings', {
 //         property: id,
 //         ...bookingData
 //       });
 //       alert('Booking request sent successfully!');
 //       setShowBookingForm(false);
 //     } catch (error) {
-//       console.error('Error booking:', error);
+//       console.error('Error creating booking:', error);
 //       alert('Failed to send booking request');
 //     }
 //   };
@@ -90,17 +90,17 @@
 //             from { opacity: 0; transform: translateY(20px); }
 //             to { opacity: 1; transform: translateY(0); }
 //           }
-          
+
 //           @keyframes slideIn {
 //             from { opacity: 0; transform: translateX(-20px); }
 //             to { opacity: 1; transform: translateX(0); }
 //           }
-          
+
 //           @keyframes spin {
 //             from { transform: rotate(0deg); }
 //             to { transform: rotate(360deg); }
 //           }
-          
+
 //           @media (max-width: 768px) {
 //             .main-image {
 //               height: 300px !important;
@@ -115,7 +115,7 @@
 //               font-size: 28px !important;
 //             }
 //           }
-          
+
 //           @media (max-width: 480px) {
 //             .main-image {
 //               height: 250px !important;
@@ -141,14 +141,14 @@
 //           }
 //         `}
 //       </style>
-      
+
 //       <div style={styles.container}>
 //         <div style={styles.content}>
 //           {/* Gallery Section */}
 //           <div style={styles.gallerySection}>
 //             <div style={styles.mainImageContainer}>
-//               <img 
-//                 src={property.images[selectedImage] || 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800'} 
+//               <img
+//                 src={property.images[selectedImage] || 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800'}
 //                 alt={property.title}
 //                 style={styles.mainImage}
 //                 className="main-image"
@@ -157,7 +157,7 @@
 //                 <div style={styles.availableBadge}>Available</div>
 //               )}
 //             </div>
-            
+
 //             {property.images.length > 1 && (
 //               <div style={styles.thumbnailContainer}>
 //                 {property.images.map((img, index) => (
@@ -305,8 +305,8 @@
 //             {/* Booking Button */}
 //             {property.status === 'available' && (
 //               <div style={styles.bookingSection}>
-//                 <button 
-//                   onClick={() => setShowBookingForm(!showBookingForm)} 
+//                 <button
+//                   onClick={() => setShowBookingForm(!showBookingForm)}
 //                   style={styles.bookButton}
 //                 >
 //                   {showBookingForm ? 'Cancel Booking' : 'Book This Property'}
@@ -317,7 +317,7 @@
 //                     <h3 style={styles.bookingTitle}>
 //                       {property.type === 'sale' ? 'Schedule a Visit' : 'Book This Property'}
 //                     </h3>
-                    
+
 //                     <div style={styles.formGroup}>
 //                       <label style={styles.formLabel}>Booking Type</label>
 //                       <select
@@ -902,66 +902,61 @@
 
 // export default PropertyDetails;
 
-
-
-import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import { useAuth } from '../context/AuthContext';
-import api from '../services/api';
-
+import React, { useState, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
+import api from '../services/api'
 
 function PropertyDetails() {
-  const [property, setProperty] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [selectedImage, setSelectedImage] = useState(0);
-  const [showBookingForm, setShowBookingForm] = useState(false);
+  const [property, setProperty] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [selectedImage, setSelectedImage] = useState(0)
+  const [showBookingForm, setShowBookingForm] = useState(false)
   const [bookingData, setBookingData] = useState({
     type: 'visit',
     visitDate: '',
     startDate: '',
     endDate: '',
-    message: ''
-  });
-  const { id } = useParams();
-  const { user } = useAuth();
-  const navigate = useNavigate();
+    message: '',
+  })
+  const { id } = useParams()
+  const { user } = useAuth()
+  const navigate = useNavigate()
 
   useEffect(() => {
-    fetchProperty();
-    window.scrollTo(0, 0);
-  }, [id]);
+    fetchProperty()
+    window.scrollTo(0, 0)
+  }, [id])
 
   const fetchProperty = async () => {
     try {
-      const res = await api.get(`/properties/${id}`);
-      setProperty(res.data);
+      const res = await api.get(`/properties/${id}`)
+      setProperty(res.data)
     } catch (error) {
-      console.error('Error fetching property:', error);
+      console.error('Error fetching property:', error)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   const handleBooking = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     if (!user) {
-      navigate('/login');
-      return;
+      navigate('/login')
+      return
     }
 
     try {
       await api.post('/bookings', {
         property: id,
-        ...bookingData
-      });
-      alert('Booking request sent successfully!');
-      setShowBookingForm(false);
+        ...bookingData,
+      })
+      alert('Booking request sent successfully!')
+      setShowBookingForm(false)
     } catch (error) {
-      console.error('Error booking:', error);
-      alert('Failed to send booking request');
+      console.error('Error creating booking:', error)
+      alert('Failed to send booking request')
     }
-  };
+  }
 
   if (loading) {
     return (
@@ -969,23 +964,33 @@ function PropertyDetails() {
         <div style={styles.loader}></div>
         <p style={styles.loadingText}>Loading property details...</p>
       </div>
-    );
+    )
   }
 
   if (!property) {
     return (
       <div style={styles.errorContainer}>
-        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="12" y1="8" x2="12" y2="12"/>
-          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        <svg
+          width="50"
+          height="50"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="8" x2="12" y2="12" />
+          <line x1="12" y1="16" x2="12.01" y2="16" />
         </svg>
         <h2>Property not found</h2>
-        <button onClick={() => navigate('/properties')} style={styles.errorButton}>
+        <button
+          onClick={() => navigate('/properties')}
+          style={styles.errorButton}
+        >
           Browse Properties
         </button>
       </div>
-    );
+    )
   }
 
   return (
@@ -1026,14 +1031,17 @@ function PropertyDetails() {
           }
         `}
       </style>
-      
+
       <div style={styles.container}>
         <div style={styles.content}>
           {/* Gallery Section */}
           <div style={styles.gallerySection}>
             <div style={styles.mainImageContainer}>
-              <img 
-                src={property.images?.[selectedImage] || 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800'} 
+              <img
+                src={
+                  property.images?.[selectedImage] ||
+                  'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800'
+                }
                 alt={property.title}
                 style={styles.mainImage}
                 className="main-image"
@@ -1042,7 +1050,7 @@ function PropertyDetails() {
                 <div style={styles.availableBadge}>Available</div>
               )}
             </div>
-            
+
             {property.images?.length > 1 && (
               <div style={styles.thumbnailContainer}>
                 {property.images.map((img, index) => (
@@ -1050,11 +1058,16 @@ function PropertyDetails() {
                     key={index}
                     style={{
                       ...styles.thumbnail,
-                      ...(selectedImage === index && styles.activeThumbnail)
+                      ...(selectedImage === index && styles.activeThumbnail),
                     }}
                     onClick={() => setSelectedImage(index)}
                   >
-                    <img src={img} alt={`Thumbnail ${index + 1}`} style={styles.thumbnailImage} className="thumbnail-image" />
+                    <img
+                      src={img}
+                      alt={`Thumbnail ${index + 1}`}
+                      style={styles.thumbnailImage}
+                      className="thumbnail-image"
+                    />
                   </div>
                 ))}
               </div>
@@ -1070,17 +1083,29 @@ function PropertyDetails() {
                 </div>
                 <h1 style={styles.title}>{property.title}</h1>
                 <div style={styles.location}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                    <circle cx="12" cy="10" r="3"/>
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
                   </svg>
-                  <span>{property.location?.address}, {property.location?.city}, {property.location?.state}</span>
+                  <span>
+                    {property.location?.address}, {property.location?.city},{' '}
+                    {property.location?.state}
+                  </span>
                 </div>
               </div>
               <div style={styles.priceContainer}>
                 <div style={styles.price}>
                   ₹{property.price?.toLocaleString()}
-                  {property.type === 'rent' && <span style={styles.priceUnit}>/mo</span>}
+                  {property.type === 'rent' && (
+                    <span style={styles.priceUnit}>/mo</span>
+                  )}
                 </div>
               </div>
             </div>
@@ -1088,20 +1113,36 @@ function PropertyDetails() {
             {/* Specifications */}
             <div style={styles.specsGrid}>
               <div style={styles.specCard}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#667eea" strokeWidth="1.5">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#667eea"
+                  strokeWidth="1.5"
+                >
                   <path d="M3 9L12 3L21 9L12 15L3 9Z" />
                   <path d="M5 12V18L12 21L19 18V12" />
                 </svg>
                 <div>
-                  <div style={styles.specValue}>{property.area?.value} {property.area?.unit}</div>
+                  <div style={styles.specValue}>
+                    {property.area?.value} {property.area?.unit}
+                  </div>
                   <div style={styles.specLabel}>Area</div>
                 </div>
               </div>
               <div style={styles.specCard}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#667eea" strokeWidth="1.5">
-                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                  <line x1="16" y1="21" x2="16" y2="15"/>
-                  <line x1="8" y1="21" x2="8" y2="15"/>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#667eea"
+                  strokeWidth="1.5"
+                >
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                  <line x1="16" y1="21" x2="16" y2="15" />
+                  <line x1="8" y1="21" x2="8" y2="15" />
                 </svg>
                 <div>
                   <div style={styles.specValue}>{property.bedrooms}</div>
@@ -1109,9 +1150,16 @@ function PropertyDetails() {
                 </div>
               </div>
               <div style={styles.specCard}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#667eea" strokeWidth="1.5">
-                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                  <circle cx="12" cy="12" r="3"/>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#667eea"
+                  strokeWidth="1.5"
+                >
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                  <circle cx="12" cy="12" r="3" />
                 </svg>
                 <div>
                   <div style={styles.specValue}>{property.bathrooms}</div>
@@ -1133,8 +1181,15 @@ function PropertyDetails() {
                 <div style={styles.amenitiesGrid}>
                   {property.amenities.map((amenity, index) => (
                     <div key={index} style={styles.amenityItem}>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2">
-                        <polyline points="20 6 9 17 4 12"/>
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#10b981"
+                        strokeWidth="2"
+                      >
+                        <polyline points="20 6 9 17 4 12" />
                       </svg>
                       <span>{amenity}</span>
                     </div>
@@ -1153,8 +1208,15 @@ function PropertyDetails() {
                 <div style={styles.ownerInfo}>
                   <div style={styles.ownerName}>{property.owner?.name}</div>
                   <div style={styles.ownerContact}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
                     </svg>
                     <span>{property.owner?.phone}</span>
                   </div>
@@ -1165,8 +1227,8 @@ function PropertyDetails() {
             {/* Booking Button */}
             {property.status === 'available' && (
               <div style={styles.bookingSection}>
-                <button 
-                  onClick={() => setShowBookingForm(!showBookingForm)} 
+                <button
+                  onClick={() => setShowBookingForm(!showBookingForm)}
                   style={styles.bookButton}
                 >
                   {showBookingForm ? 'Cancel' : 'Book This Property'}
@@ -1175,14 +1237,21 @@ function PropertyDetails() {
                 {showBookingForm && (
                   <form onSubmit={handleBooking} style={styles.bookingForm}>
                     <h3 style={styles.bookingTitle}>
-                      {property.type === 'sale' ? 'Schedule a Visit' : 'Book This Property'}
+                      {property.type === 'sale'
+                        ? 'Schedule a Visit'
+                        : 'Book This Property'}
                     </h3>
-                    
+
                     <div style={styles.formGroup}>
                       <label style={styles.formLabel}>Booking Type</label>
                       <select
                         value={bookingData.type}
-                        onChange={(e) => setBookingData({...bookingData, type: e.target.value})}
+                        onChange={(e) =>
+                          setBookingData({
+                            ...bookingData,
+                            type: e.target.value,
+                          })
+                        }
                         style={styles.formSelect}
                       >
                         <option value="visit">Schedule a Visit</option>
@@ -1198,7 +1267,12 @@ function PropertyDetails() {
                         <input
                           type="date"
                           value={bookingData.visitDate}
-                          onChange={(e) => setBookingData({...bookingData, visitDate: e.target.value})}
+                          onChange={(e) =>
+                            setBookingData({
+                              ...bookingData,
+                              visitDate: e.target.value,
+                            })
+                          }
                           style={styles.formInput}
                           required
                         />
@@ -1211,7 +1285,12 @@ function PropertyDetails() {
                             <input
                               type="date"
                               value={bookingData.startDate}
-                              onChange={(e) => setBookingData({...bookingData, startDate: e.target.value})}
+                              onChange={(e) =>
+                                setBookingData({
+                                  ...bookingData,
+                                  startDate: e.target.value,
+                                })
+                              }
                               style={styles.formInput}
                               required
                             />
@@ -1221,7 +1300,12 @@ function PropertyDetails() {
                             <input
                               type="date"
                               value={bookingData.endDate}
-                              onChange={(e) => setBookingData({...bookingData, endDate: e.target.value})}
+                              onChange={(e) =>
+                                setBookingData({
+                                  ...bookingData,
+                                  endDate: e.target.value,
+                                })
+                              }
                               style={styles.formInput}
                               required
                             />
@@ -1234,7 +1318,12 @@ function PropertyDetails() {
                       <label style={styles.formLabel}>Message</label>
                       <textarea
                         value={bookingData.message}
-                        onChange={(e) => setBookingData({...bookingData, message: e.target.value})}
+                        onChange={(e) =>
+                          setBookingData({
+                            ...bookingData,
+                            message: e.target.value,
+                          })
+                        }
                         rows="3"
                         style={styles.formTextarea}
                         placeholder="Any special requests?"
@@ -1252,14 +1341,15 @@ function PropertyDetails() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
 const styles = {
   container: {
     minHeight: '100vh',
     background: '#f8fafc',
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    fontFamily:
+      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     padding: '20px 16px',
   },
   content: {
@@ -1584,6 +1674,6 @@ const styles = {
     fontSize: '14px',
     fontWeight: '600',
   },
-};
+}
 
-export default PropertyDetails;
+export default PropertyDetails

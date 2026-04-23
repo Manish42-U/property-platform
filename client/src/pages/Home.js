@@ -829,6 +829,8 @@ import { MapContainer, TileLayer, Marker, useMapEvents, Popup } from 'react-leaf
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import styled, { keyframes, css } from 'styled-components';
+import api from '../services/api'
+
 
 // ---------- FIX LEAFLET MARKER ICONS ----------
 delete L.Icon.Default.prototype._getIconUrl;
@@ -1449,7 +1451,7 @@ function Home() {
 
   const fetchFeaturedProperties = async () => {
     try {
-      const res = await axios.get('http://localhost:3000/api/properties');
+      const res = await api.get('/properties');
       let properties = [];
       if (Array.isArray(res.data)) properties = res.data;
       else if (res.data.properties && Array.isArray(res.data.properties))

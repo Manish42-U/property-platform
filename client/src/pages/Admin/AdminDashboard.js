@@ -201,6 +201,8 @@ import axios from 'axios';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import api from '../services/api'
+
 
 const Container = styled.div`
   max-width: 1400px;
@@ -569,7 +571,7 @@ function AdminDashboard() {
   const fetchStats = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:3000/api/admin/stats', {
+      const response = await api.get('/admin/stats', {
         headers: { 'x-auth-token': token }
       });
       setStats(response.data);

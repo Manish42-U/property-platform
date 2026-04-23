@@ -182,6 +182,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import api from '../services/api'
+
 
 const Container = styled.div`
   max-width: 1400px;
@@ -333,7 +335,7 @@ function AdminBookings() {
   const fetchBookings = useCallback(async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:3000/api/admin/bookings', {
+      const response = await api.get('/admin/bookings', {
         headers: { 'x-auth-token': token }
       });
       setBookings(response.data);
@@ -352,7 +354,7 @@ function AdminBookings() {
     setUpdating(bookingId);
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:3000/api/admin/bookings/${bookingId}/status`, 
+      await api.put(`/admin/bookings/${bookingId}/status`, 
         { status: newStatus },
         { headers: { 'x-auth-token': token } }
       );
@@ -369,7 +371,7 @@ function AdminBookings() {
     if (window.confirm('Are you sure you want to delete this booking?')) {
       try {
         const token = localStorage.getItem('token');
-        await axios.delete(`http://localhost:3000/api/admin/bookings/${bookingId}`, {
+        await api.delete(`/admin/bookings/${bookingId}`, {
           headers: { 'x-auth-token': token }
         });
         fetchBookings();

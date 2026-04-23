@@ -184,6 +184,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import api from '../services/api'
+
 
 const Container = styled.div`
   max-width: 1400px;
@@ -336,7 +338,7 @@ function AdminProperties() {
         return;
       }
       
-      const response = await axios.get('http://localhost:3000/api/admin/properties', {
+      const response = await api.get('/admin/properties', {
         headers: { 'x-auth-token': token }
       });
       setProperties(response.data);
@@ -363,7 +365,7 @@ function AdminProperties() {
     if (window.confirm('Are you sure you want to delete this property?')) {
       try {
         const token = localStorage.getItem('token');
-        await axios.delete(`http://localhost:3000/api/admin/properties/${propertyId}`, {
+        await api.delete(`/admin/properties/${propertyId}`, {
           headers: { 'x-auth-token': token }
         });
         fetchProperties();

@@ -1,5 +1,3 @@
-
-
 // import React, { useState, useEffect, useCallback } from 'react';
 // import { useNavigate } from 'react-router-dom';
 // import axios from 'axios';
@@ -37,13 +35,13 @@
 //   padding: 2rem;
 //   color: white;
 //   text-align: center;
-  
+
 //   h1 {
 //     font-size: 2rem;
 //     margin-bottom: 0.5rem;
 //     font-weight: 700;
 //   }
-  
+
 //   p {
 //     opacity: 0.9;
 //     font-size: 0.95rem;
@@ -58,7 +56,7 @@
 //   margin-bottom: 2rem;
 //   padding-bottom: 2rem;
 //   border-bottom: 1px solid #e2e8f0;
-  
+
 //   &:last-child {
 //     border-bottom: none;
 //     margin-bottom: 0;
@@ -74,7 +72,7 @@
 //   display: flex;
 //   align-items: center;
 //   gap: 0.5rem;
-  
+
 //   &::before {
 //     content: '';
 //     width: 4px;
@@ -94,7 +92,7 @@
 //   display: flex;
 //   flex-direction: column;
 //   gap: 0.5rem;
-  
+
 //   label {
 //     font-weight: 600;
 //     color: #475569;
@@ -102,7 +100,7 @@
 //     text-transform: uppercase;
 //     letter-spacing: 0.5px;
 //   }
-  
+
 //   input, select, textarea {
 //     padding: 0.75rem 1rem;
 //     border: 2px solid #e2e8f0;
@@ -110,18 +108,18 @@
 //     font-size: 0.95rem;
 //     transition: all 0.3s;
 //     font-family: inherit;
-    
+
 //     &:focus {
 //       outline: none;
 //       border-color: #667eea;
 //       box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 //     }
-    
+
 //     &:hover {
 //       border-color: #cbd5e1;
 //     }
 //   }
-  
+
 //   textarea {
 //     resize: vertical;
 //     min-height: 100px;
@@ -140,12 +138,12 @@
 //   display: inline-flex;
 //   align-items: center;
 //   gap: 0.5rem;
-  
+
 //   &:hover {
 //     transform: translateY(-2px);
 //     box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
 //   }
-  
+
 //   &:disabled {
 //     opacity: 0.6;
 //     cursor: not-allowed;
@@ -168,12 +166,12 @@
 //   margin-bottom: 1rem;
 //   width: 100%;
 //   justify-content: center;
-  
+
 //   &:hover {
 //     transform: translateY(-2px);
 //     box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
 //   }
-  
+
 //   &:disabled {
 //     opacity: 0.6;
 //     cursor: not-allowed;
@@ -196,7 +194,7 @@
 //   display: inline-flex;
 //   align-items: center;
 //   gap: 0.5rem;
-  
+
 //   button {
 //     background: none;
 //     border: none;
@@ -204,7 +202,7 @@
 //     color: #667eea;
 //     font-size: 1rem;
 //     padding: 0;
-    
+
 //     &:hover {
 //       color: #dc2626;
 //     }
@@ -224,18 +222,18 @@
 //   overflow: hidden;
 //   border: 2px solid #e2e8f0;
 //   transition: all 0.3s;
-  
+
 //   &:hover {
 //     transform: translateY(-4px);
 //     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 //   }
-  
+
 //   img {
 //     width: 100%;
 //     height: 150px;
 //     object-fit: cover;
 //   }
-  
+
 //   button {
 //     position: absolute;
 //     top: 0.5rem;
@@ -251,7 +249,7 @@
 //     align-items: center;
 //     justify-content: center;
 //     font-size: 1rem;
-    
+
 //     &:hover {
 //       background: #dc2626;
 //       transform: scale(1.1);
@@ -267,16 +265,16 @@
 //   cursor: pointer;
 //   transition: all 0.3s;
 //   margin-top: 0.5rem;
-  
+
 //   &:hover {
 //     border-color: #667eea;
 //     background: #f8fafc;
 //   }
-  
+
 //   input {
 //     display: none;
 //   }
-  
+
 //   label {
 //     cursor: pointer;
 //     display: inline-flex;
@@ -325,7 +323,7 @@
 //   display: grid;
 //   grid-template-columns: 1fr 1fr;
 //   gap: 1rem;
-  
+
 //   @media (max-width: 768px) {
 //     grid-template-columns: 1fr;
 //   }
@@ -847,8 +845,8 @@
 // import axios from 'axios';
 // import { useAuth } from '../context/AuthContext';
 // import styled, { keyframes } from 'styled-components';
-// import { 
-//   FaHome, FaMapMarkerAlt, FaImage, FaPlus, FaTimes, 
+// import {
+//   FaHome, FaMapMarkerAlt, FaImage, FaPlus, FaTimes,
 //   FaCheck, FaInfoCircle, FaSpinner, FaExclamationTriangle,
 //   FaCheckCircle, FaCamera, FaLink, FaBuilding, FaBed,
 //   FaBath, FaRuler, FaParking, FaTree, FaWifi, FaSnowflake,
@@ -873,7 +871,7 @@
 //   padding: 1rem;
 //   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 //   min-height: 100vh;
-  
+
 //   @media (min-width: 768px) {
 //     padding: 2rem;
 //   }
@@ -885,7 +883,7 @@
 //   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 //   overflow: hidden;
 //   animation: ${fadeIn} 0.5s ease-out;
-  
+
 //   @media (min-width: 768px) {
 //     border-radius: 24px;
 //   }
@@ -896,7 +894,7 @@
 //   padding: 1.5rem;
 //   color: white;
 //   text-align: center;
-  
+
 //   h1 {
 //     font-size: 1.5rem;
 //     margin-bottom: 0.5rem;
@@ -905,17 +903,17 @@
 //     align-items: center;
 //     justify-content: center;
 //     gap: 8px;
-    
+
 //     @media (min-width: 768px) {
 //       font-size: 2rem;
 //       gap: 10px;
 //     }
 //   }
-  
+
 //   p {
 //     opacity: 0.9;
 //     font-size: 0.85rem;
-    
+
 //     @media (min-width: 768px) {
 //       font-size: 0.95rem;
 //     }
@@ -924,7 +922,7 @@
 
 // const FormBody = styled.div`
 //   padding: 1.25rem;
-  
+
 //   @media (min-width: 768px) {
 //     padding: 2rem;
 //   }
@@ -934,12 +932,12 @@
 //   margin-bottom: 1.5rem;
 //   padding-bottom: 1.5rem;
 //   border-bottom: 1px solid #e2e8f0;
-  
+
 //   @media (min-width: 768px) {
 //     margin-bottom: 2rem;
 //     padding-bottom: 2rem;
 //   }
-  
+
 //   &:last-child {
 //     border-bottom: none;
 //     margin-bottom: 0;
@@ -955,19 +953,19 @@
 //   display: flex;
 //   align-items: center;
 //   gap: 0.5rem;
-  
+
 //   @media (min-width: 768px) {
 //     font-size: 1.25rem;
 //     margin-bottom: 1.5rem;
 //   }
-  
+
 //   &::before {
 //     content: '';
 //     width: 3px;
 //     height: 16px;
 //     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 //     border-radius: 2px;
-    
+
 //     @media (min-width: 768px) {
 //       width: 4px;
 //       height: 20px;
@@ -979,12 +977,12 @@
 //   display: grid;
 //   grid-template-columns: 1fr;
 //   gap: 1rem;
-  
+
 //   @media (min-width: 640px) {
 //     grid-template-columns: repeat(2, 1fr);
 //     gap: 1.25rem;
 //   }
-  
+
 //   @media (min-width: 1024px) {
 //     gap: 1.5rem;
 //   }
@@ -994,11 +992,11 @@
 //   display: flex;
 //   flex-direction: column;
 //   gap: 0.4rem;
-  
+
 //   @media (min-width: 768px) {
 //     gap: 0.5rem;
 //   }
-  
+
 //   label {
 //     font-weight: 600;
 //     color: #475569;
@@ -1008,12 +1006,12 @@
 //     display: flex;
 //     align-items: center;
 //     gap: 0.5rem;
-    
+
 //     @media (min-width: 768px) {
 //       font-size: 0.875rem;
 //     }
 //   }
-  
+
 //   input, select, textarea {
 //     padding: 0.6rem 0.75rem;
 //     border: 2px solid #e2e8f0;
@@ -1022,28 +1020,28 @@
 //     transition: all 0.3s;
 //     font-family: inherit;
 //     -webkit-appearance: none;
-    
+
 //     @media (min-width: 768px) {
 //       padding: 0.75rem 1rem;
 //       font-size: 0.95rem;
 //       border-radius: 12px;
 //     }
-    
+
 //     &:focus {
 //       outline: none;
 //       border-color: #667eea;
 //       box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 //     }
-    
+
 //     &:hover {
 //       border-color: #cbd5e1;
 //     }
 //   }
-  
+
 //   textarea {
 //     resize: vertical;
 //     min-height: 80px;
-    
+
 //     @media (min-width: 768px) {
 //       min-height: 100px;
 //     }
@@ -1065,19 +1063,19 @@
 //   gap: 0.5rem;
 //   font-size: 0.875rem;
 //   width: 100%;
-  
+
 //   @media (min-width: 640px) {
 //     width: auto;
 //     padding: 0.75rem 1.5rem;
 //     font-size: 0.95rem;
 //     border-radius: 12px;
 //   }
-  
+
 //   &:hover {
 //     transform: translateY(-2px);
 //     box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
 //   }
-  
+
 //   &:disabled {
 //     opacity: 0.6;
 //     cursor: not-allowed;
@@ -1101,18 +1099,18 @@
 //   margin-bottom: 1rem;
 //   width: 100%;
 //   font-size: 0.875rem;
-  
+
 //   @media (min-width: 640px) {
 //     padding: 0.75rem 1.5rem;
 //     font-size: 0.95rem;
 //     border-radius: 12px;
 //   }
-  
+
 //   &:hover {
 //     transform: translateY(-2px);
 //     box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
 //   }
-  
+
 //   &:disabled {
 //     opacity: 0.6;
 //     cursor: not-allowed;
@@ -1135,12 +1133,12 @@
 //   display: inline-flex;
 //   align-items: center;
 //   gap: 0.5rem;
-  
+
 //   @media (min-width: 768px) {
 //     padding: 0.5rem 1rem;
 //     font-size: 0.875rem;
 //   }
-  
+
 //   button {
 //     background: none;
 //     border: none;
@@ -1150,7 +1148,7 @@
 //     padding: 0;
 //     display: flex;
 //     align-items: center;
-    
+
 //     &:hover {
 //       color: #dc2626;
 //     }
@@ -1162,7 +1160,7 @@
 //   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
 //   gap: 0.75rem;
 //   margin-top: 1rem;
-  
+
 //   @media (min-width: 768px) {
 //     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 //     gap: 1rem;
@@ -1176,22 +1174,22 @@
 //   border: 2px solid #e2e8f0;
 //   transition: all 0.3s;
 //   aspect-ratio: 1;
-  
+
 //   @media (min-width: 768px) {
 //     border-radius: 12px;
 //   }
-  
+
 //   &:hover {
 //     transform: translateY(-4px);
 //     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 //   }
-  
+
 //   img {
 //     width: 100%;
 //     height: 100%;
 //     object-fit: cover;
 //   }
-  
+
 //   button {
 //     position: absolute;
 //     top: 0.25rem;
@@ -1207,7 +1205,7 @@
 //     align-items: center;
 //     justify-content: center;
 //     font-size: 0.75rem;
-    
+
 //     @media (min-width: 768px) {
 //       top: 0.5rem;
 //       right: 0.5rem;
@@ -1215,7 +1213,7 @@
 //       height: 28px;
 //       font-size: 0.875rem;
 //     }
-    
+
 //     &:hover {
 //       background: #dc2626;
 //       transform: scale(1.1);
@@ -1231,21 +1229,21 @@
 //   cursor: pointer;
 //   transition: all 0.3s;
 //   margin-top: 0.5rem;
-  
+
 //   @media (min-width: 768px) {
 //     border-radius: 12px;
 //     padding: 1.5rem;
 //   }
-  
+
 //   &:hover {
 //     border-color: #667eea;
 //     background: #f8fafc;
 //   }
-  
+
 //   input {
 //     display: none;
 //   }
-  
+
 //   label {
 //     cursor: pointer;
 //     display: inline-flex;
@@ -1256,7 +1254,7 @@
 //     font-weight: 500;
 //     font-size: 0.875rem;
 //     width: 100%;
-    
+
 //     @media (min-width: 768px) {
 //       font-size: 1rem;
 //     }
@@ -1271,7 +1269,7 @@
 //   border-radius: 50%;
 //   animation: ${spin} 0.8s linear infinite;
 //   display: inline-block;
-  
+
 //   @media (min-width: 768px) {
 //     width: 20px;
 //     height: 20px;
@@ -1288,7 +1286,7 @@
 //   align-items: center;
 //   gap: 0.5rem;
 //   font-size: 0.8rem;
-  
+
 //   @media (min-width: 768px) {
 //     padding: 1rem;
 //     border-radius: 12px;
@@ -1306,7 +1304,7 @@
 //   align-items: center;
 //   gap: 0.5rem;
 //   font-size: 0.8rem;
-  
+
 //   @media (min-width: 768px) {
 //     padding: 1rem;
 //     border-radius: 12px;
@@ -1318,7 +1316,7 @@
 //   display: grid;
 //   grid-template-columns: 1fr;
 //   gap: 0.75rem;
-  
+
 //   @media (min-width: 640px) {
 //     grid-template-columns: 1fr auto;
 //     gap: 1rem;
@@ -1332,7 +1330,7 @@
 //   display: flex;
 //   align-items: center;
 //   gap: 0.25rem;
-  
+
 //   @media (min-width: 768px) {
 //     font-size: 0.75rem;
 //   }
@@ -1736,7 +1734,7 @@
 //             <Section>
 //               <SectionTitle>Location Details</SectionTitle>
 //               <LocationButton type="button" onClick={getCurrentLocation} disabled={fetchingLocation}>
-//                 {fetchingLocation ? <LoadingSpinner /> : <MdLocationOn size={18} />} 
+//                 {fetchingLocation ? <LoadingSpinner /> : <MdLocationOn size={18} />}
 //                 {fetchingLocation ? 'Fetching...' : 'Use My Current Location'}
 //               </LocationButton>
 //               <InfoText>
@@ -1862,7 +1860,7 @@
 //             </Section>
 
 //             <Button type="submit" disabled={loading || fetchingLocation} style={{ width: '100%', justifyContent: 'center' }}>
-//               {loading ? <LoadingSpinner /> : <MdAddHome size={18} />} 
+//               {loading ? <LoadingSpinner /> : <MdAddHome size={18} />}
 //               {loading ? 'Adding Property...' : 'Add Property'}
 //             </Button>
 //           </form>
@@ -1874,28 +1872,44 @@
 
 // export default AddProperty;
 
-
-import React, { useState, useEffect, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import { useAuth } from '../context/AuthContext';
-import styled, { keyframes } from 'styled-components';
-import { 
-  FaHome, FaMapMarkerAlt, FaPlus, FaTimes, 
-  FaCheck, FaInfoCircle, FaCheckCircle, FaCamera, FaLink, 
-  FaBuilding, FaBed, FaBath, FaRuler
-} from 'react-icons/fa';
-import { MdLogin, MdLocationOn, MdAddHome, MdError, MdAddLink } from 'react-icons/md';
+import React, { useState, useEffect, useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import api from '../services/api'
+import { useAuth } from '../context/AuthContext'
+import styled, { keyframes } from 'styled-components'
+import {
+  FaHome,
+  FaMapMarkerAlt,
+  FaPlus,
+  FaTimes,
+  FaCheck,
+  FaInfoCircle,
+  FaCheckCircle,
+  FaCamera,
+  FaLink,
+  FaBuilding,
+  FaBed,
+  FaBath,
+  FaRuler,
+} from 'react-icons/fa'
+import {
+  MdLogin,
+  MdLocationOn,
+  MdAddHome,
+  MdError,
+  MdAddLink,
+} from 'react-icons/md'
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
-`;
+`
 
 const spin = keyframes`
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-`;
+`
 
 const Container = styled.div`
   max-width: 1200px;
@@ -1903,11 +1917,11 @@ const Container = styled.div`
   padding: 1rem;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   min-height: 100vh;
-  
+
   @media (min-width: 768px) {
     padding: 2rem;
   }
-`;
+`
 
 const FormCard = styled.div`
   background: white;
@@ -1915,18 +1929,18 @@ const FormCard = styled.div`
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   animation: ${fadeIn} 0.5s ease-out;
-  
+
   @media (min-width: 768px) {
     border-radius: 24px;
   }
-`;
+`
 
 const FormHeader = styled.div`
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 1.5rem;
   color: white;
   text-align: center;
-  
+
   h1 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
@@ -1935,47 +1949,47 @@ const FormHeader = styled.div`
     align-items: center;
     justify-content: center;
     gap: 8px;
-    
+
     @media (min-width: 768px) {
       font-size: 2rem;
       gap: 10px;
     }
   }
-  
+
   p {
     opacity: 0.9;
     font-size: 0.85rem;
-    
+
     @media (min-width: 768px) {
       font-size: 0.95rem;
     }
   }
-`;
+`
 
 const FormBody = styled.div`
   padding: 1.25rem;
-  
+
   @media (min-width: 768px) {
     padding: 2rem;
   }
-`;
+`
 
 const Section = styled.div`
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid #e2e8f0;
-  
+
   @media (min-width: 768px) {
     margin-bottom: 2rem;
     padding-bottom: 2rem;
   }
-  
+
   &:last-child {
     border-bottom: none;
     margin-bottom: 0;
     padding-bottom: 0;
   }
-`;
+`
 
 const SectionTitle = styled.h3`
   font-size: 1.1rem;
@@ -1985,50 +1999,50 @@ const SectionTitle = styled.h3`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  
+
   @media (min-width: 768px) {
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
   }
-  
+
   &::before {
     content: '';
     width: 3px;
     height: 16px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: 2px;
-    
+
     @media (min-width: 768px) {
       width: 4px;
       height: 20px;
     }
   }
-`;
+`
 
 const FormGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-  
+
   @media (min-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
   }
-  
+
   @media (min-width: 1024px) {
     gap: 1.5rem;
   }
-`;
+`
 
 const FormGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  
+
   @media (min-width: 768px) {
     gap: 0.5rem;
   }
-  
+
   label {
     font-weight: 600;
     color: #475569;
@@ -2038,42 +2052,44 @@ const FormGroup = styled.div`
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    
+
     @media (min-width: 768px) {
       font-size: 0.875rem;
     }
   }
-  
-  input, select, textarea {
+
+  input,
+  select,
+  textarea {
     padding: 0.6rem 0.75rem;
     border: 2px solid #e2e8f0;
     border-radius: 10px;
     font-size: 0.875rem;
     transition: all 0.3s;
     font-family: inherit;
-    
+
     @media (min-width: 768px) {
       padding: 0.75rem 1rem;
       font-size: 0.95rem;
       border-radius: 12px;
     }
-    
+
     &:focus {
       outline: none;
       border-color: #667eea;
       box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
     }
   }
-  
+
   textarea {
     resize: vertical;
     min-height: 80px;
-    
+
     @media (min-width: 768px) {
       min-height: 100px;
     }
   }
-`;
+`
 
 const Button = styled.button`
   padding: 0.6rem 1rem;
@@ -2089,25 +2105,25 @@ const Button = styled.button`
   justify-content: center;
   gap: 0.5rem;
   font-size: 0.875rem;
-  
+
   @media (min-width: 640px) {
     width: auto;
     padding: 0.75rem 1.5rem;
     font-size: 0.95rem;
     border-radius: 12px;
   }
-  
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
   }
-  
+
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
     transform: none;
   }
-`;
+`
 
 const LocationButton = styled.button`
   padding: 0.6rem 1rem;
@@ -2125,30 +2141,30 @@ const LocationButton = styled.button`
   margin-bottom: 1rem;
   width: 100%;
   font-size: 0.875rem;
-  
+
   @media (min-width: 640px) {
     padding: 0.75rem 1.5rem;
     font-size: 0.95rem;
     border-radius: 12px;
   }
-  
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
   }
-  
+
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
   }
-`;
+`
 
 const AmenitiesContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 0.5rem;
-`;
+`
 
 const AmenityTag = styled.div`
   background: #eef2ff;
@@ -2159,12 +2175,12 @@ const AmenityTag = styled.div`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  
+
   @media (min-width: 768px) {
     padding: 0.5rem 1rem;
     font-size: 0.875rem;
   }
-  
+
   button {
     background: none;
     border: none;
@@ -2174,24 +2190,24 @@ const AmenityTag = styled.div`
     padding: 0;
     display: flex;
     align-items: center;
-    
+
     &:hover {
       color: #dc2626;
     }
   }
-`;
+`
 
 const ImagesGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   gap: 0.75rem;
   margin-top: 1rem;
-  
+
   @media (min-width: 768px) {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 1rem;
   }
-`;
+`
 
 const ImageCard = styled.div`
   position: relative;
@@ -2200,18 +2216,18 @@ const ImageCard = styled.div`
   border: 2px solid #e2e8f0;
   transition: all 0.3s;
   aspect-ratio: 1;
-  
+
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   }
-  
+
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  
+
   button {
     position: absolute;
     top: 0.25rem;
@@ -2226,13 +2242,13 @@ const ImageCard = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     &:hover {
       background: #dc2626;
       transform: scale(1.1);
     }
   }
-`;
+`
 
 const FileInput = styled.div`
   border: 2px dashed #e2e8f0;
@@ -2242,16 +2258,16 @@ const FileInput = styled.div`
   cursor: pointer;
   transition: all 0.3s;
   margin-top: 0.5rem;
-  
+
   &:hover {
     border-color: #667eea;
     background: #f8fafc;
   }
-  
+
   input {
     display: none;
   }
-  
+
   label {
     cursor: pointer;
     display: inline-flex;
@@ -2262,12 +2278,12 @@ const FileInput = styled.div`
     font-weight: 500;
     font-size: 0.875rem;
     width: 100%;
-    
+
     @media (min-width: 768px) {
       font-size: 1rem;
     }
   }
-`;
+`
 
 const LoadingSpinner = styled.div`
   width: 16px;
@@ -2277,7 +2293,7 @@ const LoadingSpinner = styled.div`
   border-radius: 50%;
   animation: ${spin} 0.8s linear infinite;
   display: inline-block;
-`;
+`
 
 const ErrorMessage = styled.div`
   background: #fee2e2;
@@ -2289,13 +2305,13 @@ const ErrorMessage = styled.div`
   align-items: center;
   gap: 0.5rem;
   font-size: 0.8rem;
-  
+
   @media (min-width: 768px) {
     padding: 1rem;
     border-radius: 12px;
     font-size: 0.875rem;
   }
-`;
+`
 
 const SuccessMessage = styled.div`
   background: #d1fae5;
@@ -2307,24 +2323,24 @@ const SuccessMessage = styled.div`
   align-items: center;
   gap: 0.5rem;
   font-size: 0.8rem;
-  
+
   @media (min-width: 768px) {
     padding: 1rem;
     border-radius: 12px;
     font-size: 0.875rem;
   }
-`;
+`
 
 const Row = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.75rem;
-  
+
   @media (min-width: 640px) {
     grid-template-columns: 1fr auto;
     gap: 1rem;
   }
-`;
+`
 
 const InfoText = styled.p`
   font-size: 0.7rem;
@@ -2333,11 +2349,11 @@ const InfoText = styled.p`
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  
+
   @media (min-width: 768px) {
     font-size: 0.75rem;
   }
-`;
+`
 
 function AddProperty() {
   const [formData, setFormData] = useState({
@@ -2351,197 +2367,213 @@ function AddProperty() {
       city: '',
       state: '',
       pincode: '',
-      coordinates: { lat: '', lng: '' }
+      coordinates: { lat: '', lng: '' },
     },
     bedrooms: '',
     bathrooms: '',
     area: { value: '', unit: 'sqft' },
     amenities: [],
-    images: []
-  });
-  const [amenity, setAmenity] = useState('');
-  const [selectedFiles, setSelectedFiles] = useState([]);
-  const [imagePreviews, setImagePreviews] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [fetchingLocation, setFetchingLocation] = useState(false);
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
-  const navigate = useNavigate();
-  const { user } = useAuth();
+    images: [],
+  })
+  const [amenity, setAmenity] = useState('')
+  const [selectedFiles, setSelectedFiles] = useState([])
+  const [imagePreviews, setImagePreviews] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [fetchingLocation, setFetchingLocation] = useState(false)
+  const [error, setError] = useState('')
+  const [success, setSuccess] = useState('')
+  const [imageUrl, setImageUrl] = useState('')
+  const navigate = useNavigate()
+  const { user } = useAuth()
 
-  const OPENCAGE_API_KEY = '66e1967e92a54de8b712cd7ebd84db50';
+  const OPENCAGE_API_KEY = '66e1967e92a54de8b712cd7ebd84db50'
 
   const geocodeAddress = useCallback(async (address, city, state, pincode) => {
-    const fullAddress = `${address}, ${city}, ${state} ${pincode}`.trim();
-    if (!fullAddress || fullAddress === ', , ') return null;
+    const fullAddress = `${address}, ${city}, ${state} ${pincode}`.trim()
+    if (!fullAddress || fullAddress === ', , ') return null
 
     try {
-      const response = await axios.get('https://api.opencagedata.com/geocode/v1/json', {
-        params: {
-          q: fullAddress,
-          key: OPENCAGE_API_KEY,
-          language: 'en',
-          pretty: 1,
-          countrycode: 'in',
-          limit: 1
-        }
-      });
+      const response = await axios.get(
+        'https://api.opencagedata.com/geocode/v1/json',
+        {
+          params: {
+            q: fullAddress,
+            key: OPENCAGE_API_KEY,
+            language: 'en',
+            pretty: 1,
+            countrycode: 'in',
+            limit: 1,
+          },
+        },
+      )
 
       if (response.data.results && response.data.results.length > 0) {
-        const result = response.data.results[0];
+        const result = response.data.results[0]
         return {
           lat: result.geometry.lat,
-          lng: result.geometry.lng
-        };
+          lng: result.geometry.lng,
+        }
       }
-      return null;
+      return null
     } catch (error) {
-      console.error('Geocoding error:', error);
-      return null;
+      console.error('Geocoding error:', error)
+      return null
     }
-  }, []);
+  }, [])
 
   useEffect(() => {
     const timer = setTimeout(async () => {
-      const { address, city, state, pincode } = formData.location;
+      const { address, city, state, pincode } = formData.location
       if (address && city) {
-        setFetchingLocation(true);
-        const coords = await geocodeAddress(address, city, state, pincode);
+        setFetchingLocation(true)
+        const coords = await geocodeAddress(address, city, state, pincode)
         if (coords) {
-          setFormData(prev => ({
+          setFormData((prev) => ({
             ...prev,
             location: {
               ...prev.location,
-              coordinates: { lat: coords.lat, lng: coords.lng }
-            }
-          }));
-          setSuccess('📍 Coordinates fetched!');
-          setTimeout(() => setSuccess(''), 2000);
+              coordinates: { lat: coords.lat, lng: coords.lng },
+            },
+          }))
+          setSuccess('📍 Coordinates fetched!')
+          setTimeout(() => setSuccess(''), 2000)
         }
-        setFetchingLocation(false);
+        setFetchingLocation(false)
       }
-    }, 1500);
-    return () => clearTimeout(timer);
-  }, [formData.location.address, formData.location.city, formData.location.state, formData.location.pincode, geocodeAddress]);
+    }, 1500)
+    return () => clearTimeout(timer)
+  }, [
+    formData.location.address,
+    formData.location.city,
+    formData.location.state,
+    formData.location.pincode,
+    geocodeAddress,
+  ])
 
   const getCurrentLocation = () => {
     if (!navigator.geolocation) {
-      setError('Geolocation is not supported by your browser.');
-      return;
+      setError('Geolocation is not supported by your browser.')
+      return
     }
 
-    setFetchingLocation(true);
-    setError('');
+    setFetchingLocation(true)
+    setError('')
 
     navigator.geolocation.getCurrentPosition(
       async (position) => {
-        const { latitude, longitude } = position.coords;
-        setFormData(prev => ({
+        const { latitude, longitude } = position.coords
+        setFormData((prev) => ({
           ...prev,
           location: {
             ...prev.location,
-            coordinates: { lat: latitude, lng: longitude }
-          }
-        }));
+            coordinates: { lat: latitude, lng: longitude },
+          },
+        }))
 
         try {
-          const response = await axios.get('https://api.opencagedata.com/geocode/v1/json', {
-            params: {
-              q: `${latitude},${longitude}`,
-              key: OPENCAGE_API_KEY,
-              language: 'en',
-              pretty: 1,
-              countrycode: 'in'
-            }
-          });
+          const response = await axios.get(
+            'https://api.opencagedata.com/geocode/v1/json',
+            {
+              params: {
+                q: `${latitude},${longitude}`,
+                key: OPENCAGE_API_KEY,
+                language: 'en',
+                pretty: 1,
+                countrycode: 'in',
+              },
+            },
+          )
 
           if (response.data.results && response.data.results.length > 0) {
-            const result = response.data.results[0];
-            const components = result.components;
-            let address = '';
-            if (components.road) address = components.road;
-            const city = components.city || components.town || components.village || '';
-            const state = components.state || '';
-            const pincode = components.postcode || '';
+            const result = response.data.results[0]
+            const components = result.components
+            let address = ''
+            if (components.road) address = components.road
+            const city =
+              components.city || components.town || components.village || ''
+            const state = components.state || ''
+            const pincode = components.postcode || ''
 
-            setFormData(prev => ({
+            setFormData((prev) => ({
               ...prev,
               location: {
                 ...prev.location,
                 address: address || result.formatted.split(',')[0] || '',
                 city: city,
                 state: state,
-                pincode: pincode
-              }
-            }));
-            setSuccess('📍 Location detected!');
+                pincode: pincode,
+              },
+            }))
+            setSuccess('📍 Location detected!')
           } else {
-            setSuccess('📍 Coordinates captured!');
+            setSuccess('📍 Coordinates captured!')
           }
         } catch (err) {
-          console.error('Reverse geocode error:', err);
-          setSuccess('📍 Coordinates captured!');
+          console.error('Reverse geocode error:', err)
+          setSuccess('📍 Coordinates captured!')
         }
-        setTimeout(() => setSuccess(''), 2000);
-        setFetchingLocation(false);
+        setTimeout(() => setSuccess(''), 2000)
+        setFetchingLocation(false)
       },
       (error) => {
-        console.error('Geolocation error:', error);
-        setError('❌ Could not get location. Please enter manually.');
-        setFetchingLocation(false);
-        setTimeout(() => setError(''), 3000);
+        console.error('Geolocation error:', error)
+        setError('❌ Could not get location. Please enter manually.')
+        setFetchingLocation(false)
+        setTimeout(() => setError(''), 3000)
       },
-      { enableHighAccuracy: true, timeout: 10000 }
-    );
-  };
+      { enableHighAccuracy: true, timeout: 10000 },
+    )
+  }
 
   const handleFileSelect = (e) => {
-    const files = Array.from(e.target.files);
-    const validFiles = files.filter(f => f.size <= 5 * 1024 * 1024);
+    const files = Array.from(e.target.files)
+    const validFiles = files.filter((f) => f.size <= 5 * 1024 * 1024)
     if (validFiles.length !== files.length) {
-      setError('Some files exceed 5MB limit.');
-      setTimeout(() => setError(''), 3000);
+      setError('Some files exceed 5MB limit.')
+      setTimeout(() => setError(''), 3000)
     }
-    setSelectedFiles(prev => [...prev, ...validFiles]);
-    const previews = validFiles.map(f => URL.createObjectURL(f));
-    setImagePreviews(prev => [...prev, ...previews]);
-  };
+    setSelectedFiles((prev) => [...prev, ...validFiles])
+    const previews = validFiles.map((f) => URL.createObjectURL(f))
+    setImagePreviews((prev) => [...prev, ...previews])
+  }
 
   const addImageUrl = () => {
     if (imageUrl && imageUrl.trim()) {
       if (!formData.images.includes(imageUrl)) {
-        setFormData(prev => ({ ...prev, images: [...prev.images, imageUrl] }));
-        setImageUrl('');
-        setSuccess('Image URL added!');
-        setTimeout(() => setSuccess(''), 2000);
+        setFormData((prev) => ({ ...prev, images: [...prev.images, imageUrl] }))
+        setImageUrl('')
+        setSuccess('Image URL added!')
+        setTimeout(() => setSuccess(''), 2000)
       } else {
-        setError('Image URL already added');
-        setTimeout(() => setError(''), 2000);
+        setError('Image URL already added')
+        setTimeout(() => setError(''), 2000)
       }
     }
-  };
+  }
 
   const removeImage = (index, isUrl = true) => {
     if (isUrl) {
-      setFormData(prev => ({ ...prev, images: prev.images.filter((_, i) => i !== index) }));
+      setFormData((prev) => ({
+        ...prev,
+        images: prev.images.filter((_, i) => i !== index),
+      }))
     } else {
-      setImagePreviews(prev => prev.filter((_, i) => i !== index));
-      setSelectedFiles(prev => prev.filter((_, i) => i !== index));
+      setImagePreviews((prev) => prev.filter((_, i) => i !== index))
+      setSelectedFiles((prev) => prev.filter((_, i) => i !== index))
     }
-  };
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError('');
+    e.preventDefault()
+    setLoading(true)
+    setError('')
 
     try {
-      const token = localStorage.getItem('token');
-      if (!token) throw new Error('Please login first');
+      const token = localStorage.getItem('token')
+      if (!token) throw new Error('Please login first')
 
       if (selectedFiles.length === 0 && formData.images.length === 0) {
-        throw new Error('Please add at least one image');
+        throw new Error('Please add at least one image')
       }
 
       // Prepare location data for backend
@@ -2552,87 +2584,102 @@ function AddProperty() {
         pincode: formData.location.pincode,
         coordinates: {
           lat: parseFloat(formData.location.coordinates.lat) || 0,
-          lng: parseFloat(formData.location.coordinates.lng) || 0
-        }
-      };
+          lng: parseFloat(formData.location.coordinates.lng) || 0,
+        },
+      }
 
-      const submitData = new FormData();
-      submitData.append('title', formData.title);
-      submitData.append('description', formData.description);
-      submitData.append('type', formData.type);
-      submitData.append('propertyType', formData.propertyType);
-      submitData.append('price', formData.price);
-      submitData.append('bedrooms', formData.bedrooms || '0');
-      submitData.append('bathrooms', formData.bathrooms || '0');
-      submitData.append('location', JSON.stringify(locationData));
-      submitData.append('area', JSON.stringify(formData.area));
-      submitData.append('amenities', JSON.stringify(formData.amenities));
-      submitData.append('images', JSON.stringify(formData.images));
+      const submitData = new FormData()
+      submitData.append('title', formData.title)
+      submitData.append('description', formData.description)
+      submitData.append('type', formData.type)
+      submitData.append('propertyType', formData.propertyType)
+      submitData.append('price', formData.price)
+      submitData.append('bedrooms', formData.bedrooms || '0')
+      submitData.append('bathrooms', formData.bathrooms || '0')
+      submitData.append('location', JSON.stringify(locationData))
+      submitData.append('area', JSON.stringify(formData.area))
+      submitData.append('amenities', JSON.stringify(formData.amenities))
+      submitData.append('images', JSON.stringify(formData.images))
 
-      selectedFiles.forEach(file => {
-        submitData.append('images', file);
-      });
+      selectedFiles.forEach((file) => {
+        submitData.append('images', file)
+      })
 
-      await axios.post('http://localhost:3000/api/properties', submitData, {
+      await api.post('/properties', submitData, {
         headers: {
           'x-auth-token': token,
-          'Content-Type': 'multipart/form-data'
+          'Content-Type': 'multipart/form-data',
         },
-        timeout: 30000
-      });
+        timeout: 30000,
+      })
 
-      setSuccess('✅ Property added successfully! Redirecting...');
-      setTimeout(() => navigate('/my-properties'), 1500);
+      setSuccess('✅ Property added successfully! Redirecting...')
+      setTimeout(() => navigate('/my-properties'), 1500)
     } catch (err) {
-      console.error('Error:', err);
-      setError(err.response?.data?.message || err.message || 'Failed to add property');
+      console.error('Error:', err)
+      setError(
+        err.response?.data?.message || err.message || 'Failed to add property',
+      )
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     if (name.includes('.')) {
-      const [parent, child] = name.split('.');
-      setFormData(prev => ({
+      const [parent, child] = name.split('.')
+      setFormData((prev) => ({
         ...prev,
-        [parent]: { ...prev[parent], [child]: value }
-      }));
+        [parent]: { ...prev[parent], [child]: value },
+      }))
     } else {
-      setFormData(prev => ({ ...prev, [name]: value }));
+      setFormData((prev) => ({ ...prev, [name]: value }))
     }
-  };
+  }
 
   const handleLocationChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
+    const { name, value } = e.target
+    setFormData((prev) => ({
       ...prev,
-      location: { ...prev.location, [name]: value }
-    }));
-  };
+      location: { ...prev.location, [name]: value },
+    }))
+  }
 
   const handleCoordinatesChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
+    const { name, value } = e.target
+    setFormData((prev) => ({
       ...prev,
       location: {
         ...prev.location,
-        coordinates: { ...prev.location.coordinates, [name]: parseFloat(value) || '' }
-      }
-    }));
-  };
+        coordinates: {
+          ...prev.location.coordinates,
+          [name]: parseFloat(value) || '',
+        },
+      },
+    }))
+  }
 
   const addAmenity = () => {
-    if (amenity && amenity.trim() && !formData.amenities.includes(amenity.trim())) {
-      setFormData(prev => ({ ...prev, amenities: [...prev.amenities, amenity.trim()] }));
-      setAmenity('');
+    if (
+      amenity &&
+      amenity.trim() &&
+      !formData.amenities.includes(amenity.trim())
+    ) {
+      setFormData((prev) => ({
+        ...prev,
+        amenities: [...prev.amenities, amenity.trim()],
+      }))
+      setAmenity('')
     }
-  };
+  }
 
   const removeAmenity = (idx) => {
-    setFormData(prev => ({ ...prev, amenities: prev.amenities.filter((_, i) => i !== idx) }));
-  };
+    setFormData((prev) => ({
+      ...prev,
+      amenities: prev.amenities.filter((_, i) => i !== idx),
+    }))
+  }
 
   if (!user) {
     return (
@@ -2646,7 +2693,7 @@ function AddProperty() {
           </FormBody>
         </FormCard>
       </Container>
-    );
+    )
   }
 
   if (user.role !== 'owner') {
@@ -2656,14 +2703,16 @@ function AddProperty() {
           <FormBody style={{ textAlign: 'center', padding: '2rem' }}>
             <h2>Access Denied</h2>
             <p>Only property owners can add properties.</p>
-            <p>Your role: <strong>{user.role}</strong></p>
+            <p>
+              Your role: <strong>{user.role}</strong>
+            </p>
             <Button onClick={() => navigate('/login')}>
               <MdLogin size={20} /> Login as Owner
             </Button>
           </FormBody>
         </FormCard>
       </Container>
-    );
+    )
   }
 
   return (
@@ -2693,23 +2742,45 @@ function AddProperty() {
               <SectionTitle>Basic Information</SectionTitle>
               <FormGrid>
                 <FormGroup>
-                  <label><FaBuilding /> Title *</label>
-                  <input type="text" name="title" value={formData.title} onChange={handleChange} required />
+                  <label>
+                    <FaBuilding /> Title *
+                  </label>
+                  <input
+                    type="text"
+                    name="title"
+                    value={formData.title}
+                    onChange={handleChange}
+                    required
+                  />
                 </FormGroup>
                 <FormGroup>
                   <label>Price (₹) *</label>
-                  <input type="number" name="price" value={formData.price} onChange={handleChange} required />
+                  <input
+                    type="number"
+                    name="price"
+                    value={formData.price}
+                    onChange={handleChange}
+                    required
+                  />
                 </FormGroup>
                 <FormGroup>
                   <label>Type</label>
-                  <select name="type" value={formData.type} onChange={handleChange}>
+                  <select
+                    name="type"
+                    value={formData.type}
+                    onChange={handleChange}
+                  >
                     <option value="sale">For Sale</option>
                     <option value="rent">For Rent</option>
                   </select>
                 </FormGroup>
                 <FormGroup>
                   <label>Property Type</label>
-                  <select name="propertyType" value={formData.propertyType} onChange={handleChange}>
+                  <select
+                    name="propertyType"
+                    value={formData.propertyType}
+                    onChange={handleChange}
+                  >
                     <option value="house">House</option>
                     <option value="apartment">Apartment</option>
                     <option value="condo">Condo</option>
@@ -2723,43 +2794,103 @@ function AddProperty() {
             <Section>
               <SectionTitle>Description</SectionTitle>
               <FormGroup>
-                <textarea name="description" value={formData.description} onChange={handleChange} rows="4" required placeholder="Describe your property..." />
+                <textarea
+                  name="description"
+                  value={formData.description}
+                  onChange={handleChange}
+                  rows="4"
+                  required
+                  placeholder="Describe your property..."
+                />
               </FormGroup>
             </Section>
 
             <Section>
               <SectionTitle>📍 Location Details</SectionTitle>
-              <LocationButton type="button" onClick={getCurrentLocation} disabled={fetchingLocation}>
-                {fetchingLocation ? <LoadingSpinner /> : <MdLocationOn size={18} />} 
-                {fetchingLocation ? 'Fetching...' : '📍 Use My Current Location'}
+              <LocationButton
+                type="button"
+                onClick={getCurrentLocation}
+                disabled={fetchingLocation}
+              >
+                {fetchingLocation ? (
+                  <LoadingSpinner />
+                ) : (
+                  <MdLocationOn size={18} />
+                )}
+                {fetchingLocation
+                  ? 'Fetching...'
+                  : '📍 Use My Current Location'}
               </LocationButton>
               <InfoText>
-                <FaInfoCircle size={12} /> Click button above to auto-fill location, or fill manually
+                <FaInfoCircle size={12} /> Click button above to auto-fill
+                location, or fill manually
               </InfoText>
               <FormGrid>
                 <FormGroup>
-                  <label><FaMapMarkerAlt /> Address *</label>
-                  <input type="text" name="address" value={formData.location.address} onChange={handleLocationChange} required placeholder="e.g., MG Road" />
+                  <label>
+                    <FaMapMarkerAlt /> Address *
+                  </label>
+                  <input
+                    type="text"
+                    name="address"
+                    value={formData.location.address}
+                    onChange={handleLocationChange}
+                    required
+                    placeholder="e.g., MG Road"
+                  />
                 </FormGroup>
                 <FormGroup>
                   <label>City *</label>
-                  <input type="text" name="city" value={formData.location.city} onChange={handleLocationChange} required placeholder="e.g., Mumbai" />
+                  <input
+                    type="text"
+                    name="city"
+                    value={formData.location.city}
+                    onChange={handleLocationChange}
+                    required
+                    placeholder="e.g., Mumbai"
+                  />
                 </FormGroup>
                 <FormGroup>
                   <label>State</label>
-                  <input type="text" name="state" value={formData.location.state} onChange={handleLocationChange} placeholder="e.g., Maharashtra" />
+                  <input
+                    type="text"
+                    name="state"
+                    value={formData.location.state}
+                    onChange={handleLocationChange}
+                    placeholder="e.g., Maharashtra"
+                  />
                 </FormGroup>
                 <FormGroup>
                   <label>Pincode</label>
-                  <input type="text" name="pincode" value={formData.location.pincode} onChange={handleLocationChange} placeholder="e.g., 400001" />
+                  <input
+                    type="text"
+                    name="pincode"
+                    value={formData.location.pincode}
+                    onChange={handleLocationChange}
+                    placeholder="e.g., 400001"
+                  />
                 </FormGroup>
                 <FormGroup>
                   <label>Latitude</label>
-                  <input type="number" step="any" name="lat" value={formData.location.coordinates.lat} onChange={handleCoordinatesChange} placeholder="Auto-filled" />
+                  <input
+                    type="number"
+                    step="any"
+                    name="lat"
+                    value={formData.location.coordinates.lat}
+                    onChange={handleCoordinatesChange}
+                    placeholder="Auto-filled"
+                  />
                 </FormGroup>
                 <FormGroup>
                   <label>Longitude</label>
-                  <input type="number" step="any" name="lng" value={formData.location.coordinates.lng} onChange={handleCoordinatesChange} placeholder="Auto-filled" />
+                  <input
+                    type="number"
+                    step="any"
+                    name="lng"
+                    value={formData.location.coordinates.lng}
+                    onChange={handleCoordinatesChange}
+                    placeholder="Auto-filled"
+                  />
                 </FormGroup>
               </FormGrid>
             </Section>
@@ -2768,20 +2899,47 @@ function AddProperty() {
               <SectionTitle>Property Details</SectionTitle>
               <FormGrid>
                 <FormGroup>
-                  <label><FaBed /> Bedrooms</label>
-                  <input type="number" name="bedrooms" value={formData.bedrooms} onChange={handleChange} min="0" />
+                  <label>
+                    <FaBed /> Bedrooms
+                  </label>
+                  <input
+                    type="number"
+                    name="bedrooms"
+                    value={formData.bedrooms}
+                    onChange={handleChange}
+                    min="0"
+                  />
                 </FormGroup>
                 <FormGroup>
-                  <label><FaBath /> Bathrooms</label>
-                  <input type="number" name="bathrooms" value={formData.bathrooms} onChange={handleChange} min="0" />
+                  <label>
+                    <FaBath /> Bathrooms
+                  </label>
+                  <input
+                    type="number"
+                    name="bathrooms"
+                    value={formData.bathrooms}
+                    onChange={handleChange}
+                    min="0"
+                  />
                 </FormGroup>
                 <FormGroup>
-                  <label><FaRuler /> Area Value</label>
-                  <input type="number" name="area.value" value={formData.area.value} onChange={handleChange} />
+                  <label>
+                    <FaRuler /> Area Value
+                  </label>
+                  <input
+                    type="number"
+                    name="area.value"
+                    value={formData.area.value}
+                    onChange={handleChange}
+                  />
                 </FormGroup>
                 <FormGroup>
                   <label>Area Unit</label>
-                  <select name="area.unit" value={formData.area.unit} onChange={handleChange}>
+                  <select
+                    name="area.unit"
+                    value={formData.area.unit}
+                    onChange={handleChange}
+                  >
                     <option value="sqft">Square Feet</option>
                     <option value="sqm">Square Meters</option>
                     <option value="acre">Acre</option>
@@ -2793,12 +2951,14 @@ function AddProperty() {
             <Section>
               <SectionTitle>Amenities</SectionTitle>
               <Row>
-                <input 
-                  type="text" 
-                  value={amenity} 
-                  onChange={(e) => setAmenity(e.target.value)} 
+                <input
+                  type="text"
+                  value={amenity}
+                  onChange={(e) => setAmenity(e.target.value)}
                   placeholder="Add amenity (e.g., Parking, Garden, WiFi)"
-                  onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), addAmenity())}
+                  onKeyPress={(e) =>
+                    e.key === 'Enter' && (e.preventDefault(), addAmenity())
+                  }
                 />
                 <Button type="button" onClick={addAmenity}>
                   <FaPlus /> Add
@@ -2819,34 +2979,50 @@ function AddProperty() {
             <Section>
               <SectionTitle>Property Images</SectionTitle>
               <FileInput>
-                <input type="file" id="file-upload" multiple accept="image/*" onChange={handleFileSelect} />
+                <input
+                  type="file"
+                  id="file-upload"
+                  multiple
+                  accept="image/*"
+                  onChange={handleFileSelect}
+                />
                 <label htmlFor="file-upload">
                   <FaCamera size={16} /> Click to upload images (Max 5MB each)
                 </label>
               </FileInput>
-              
+
               {imagePreviews.length > 0 && (
                 <ImagesGrid>
                   {imagePreviews.map((preview, idx) => (
                     <ImageCard key={`preview-${idx}`}>
                       <img src={preview} alt={`Preview ${idx + 1}`} />
-                      <button type="button" onClick={() => removeImage(idx, false)}>
+                      <button
+                        type="button"
+                        onClick={() => removeImage(idx, false)}
+                      >
                         <FaTimes />
                       </button>
                     </ImageCard>
                   ))}
                 </ImagesGrid>
               )}
-              
+
               <div style={{ marginTop: '1rem' }}>
-                <label style={{ fontWeight: '600', display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem' }}>
+                <label
+                  style={{
+                    fontWeight: '600',
+                    display: 'block',
+                    marginBottom: '0.5rem',
+                    fontSize: '0.875rem',
+                  }}
+                >
                   <FaLink /> Or Add Image URLs
                 </label>
                 <Row>
-                  <input 
-                    type="url" 
-                    value={imageUrl} 
-                    onChange={(e) => setImageUrl(e.target.value)} 
+                  <input
+                    type="url"
+                    value={imageUrl}
+                    onChange={(e) => setImageUrl(e.target.value)}
                     placeholder="https://example.com/image.jpg"
                   />
                   <Button type="button" onClick={addImageUrl}>
@@ -2854,17 +3030,23 @@ function AddProperty() {
                   </Button>
                 </Row>
               </div>
-              
+
               {formData.images.length > 0 && (
                 <ImagesGrid>
                   {formData.images.map((url, idx) => (
                     <ImageCard key={`url-${idx}`}>
-                      <img 
-                        src={url} 
-                        alt={`Property ${idx + 1}`} 
-                        onError={(e) => { e.target.src = 'https://via.placeholder.com/150?text=Invalid+URL'; }} 
+                      <img
+                        src={url}
+                        alt={`Property ${idx + 1}`}
+                        onError={(e) => {
+                          e.target.src =
+                            'https://via.placeholder.com/150?text=Invalid+URL'
+                        }}
                       />
-                      <button type="button" onClick={() => removeImage(idx, true)}>
+                      <button
+                        type="button"
+                        onClick={() => removeImage(idx, true)}
+                      >
                         <FaTimes />
                       </button>
                     </ImageCard>
@@ -2873,15 +3055,19 @@ function AddProperty() {
               )}
             </Section>
 
-            <Button type="submit" disabled={loading} style={{ width: '100%', justifyContent: 'center' }}>
-              {loading ? <LoadingSpinner /> : <MdAddHome size={18} />} 
+            <Button
+              type="submit"
+              disabled={loading}
+              style={{ width: '100%', justifyContent: 'center' }}
+            >
+              {loading ? <LoadingSpinner /> : <MdAddHome size={18} />}
               {loading ? 'Adding Property...' : '✅ Add Property'}
             </Button>
           </form>
         </FormBody>
       </FormCard>
     </Container>
-  );
+  )
 }
 
-export default AddProperty;
+export default AddProperty
