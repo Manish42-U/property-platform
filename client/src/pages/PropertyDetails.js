@@ -908,6 +908,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
+import api from '../services/api';
+
 
 function PropertyDetails() {
   const [property, setProperty] = useState(null);
@@ -932,7 +934,7 @@ function PropertyDetails() {
 
   const fetchProperty = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/api/properties/${id}`);
+      const res = await api.get(`/properties/${id}`);
       setProperty(res.data);
     } catch (error) {
       console.error('Error fetching property:', error);
@@ -949,7 +951,7 @@ function PropertyDetails() {
     }
 
     try {
-      await axios.post('http://localhost:3000/api/bookings', {
+      await api.post('/bookings', {
         property: id,
         ...bookingData
       });
