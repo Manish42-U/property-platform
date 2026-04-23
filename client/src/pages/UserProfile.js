@@ -1031,7 +1031,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import styled, { keyframes } from 'styled-components';
-import { applyTimestamps } from '../../../server/models/User';
 import api from '../services/api'
 
 // Animations
